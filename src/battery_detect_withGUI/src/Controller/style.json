@@ -1,0 +1,18 @@
+{
+	"QStackedWidget":[
+		{
+			"name":"mainPages",
+			"navigation":[
+				{
+					"navigationButtons":[
+						{
+							"cameraBtn": "camera_page",
+							"calibratedBtn": "calib_page",
+							"bubbleBtn": "bubble_page"
+						}
+					]
+				}
+			]
+		}
+	]
+}

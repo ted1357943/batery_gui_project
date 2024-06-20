@@ -1,0 +1,7 @@
+<launch>
+    <!-- Launch tm_driver node -->
+    <node name="tm_driver" pkg="tm_driver" type="tm_driver" args="169.254.213.199" output="screen" />
+
+    <!-- Launch battery_detect_withGUI node -->
+    <node name="battery_detect_withGUI" pkg="battery_detect_withGUI" type="main.py" args="" output="screen" />
+</launch>

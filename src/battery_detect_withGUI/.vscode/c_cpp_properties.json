@@ -1,0 +1,23 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/yang/jojo/battery_project/ros_test/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/yang/jojo/battery_project/ros_test/src/battery_detect_withGUI/include/**",
+        "/home/yang/jojo/battery_project/ros_test/src/tmr_ros1/tm_driver/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

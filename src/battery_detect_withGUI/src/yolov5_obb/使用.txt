@@ -1,0 +1,32 @@
+python detect_origin.py --weights 'runs/train/exp8/weights/best.pt' --source 4 --conf-thres 0.5 --device 0 --agnostic --imgsz 1080 
+
+＃realsense source選4 webcam source選0
+＃手臂是用deect_robot_grab.py ; 目前都用detect_origin.py改 ; 辨識形狀是用detect_origin_hsv.py
+＃utils/datasets 裡面有新增 LoadImages_HSV, LoadStreams_HSV
+＃utils/general裡面有apply_classifier或許可以用在second stage
+＃utils/metrics 裡面的 ConfusionMatrix
+
+訓練時，dataset.py593行取消註解，594～596註解
+        self.cls_names = cls_names
+        #if isinstance(cls_names, dict):
+        #    self.cls_names = list(cls_names.values())
+        #    print(list(cls_names.values()))
+            
+測試時,dataset.py593行註解，594～596取消註解
+        #self.cls_names = cls_names
+        if isinstance(cls_names, dict):
+            self.cls_names = list(cls_names.values())
+            print(list(cls_names.values()))
+
+python val.py --data '/home/iris/datasets/roboflow/data.yaml' --weights '/home/iris/ting/yolov5_obb/runs/train/cylinder0219/weights/best.pt'  --device 0 --conf-thres 0.5 --task test
+
+跑完後使用confusion matrix.py使數據正規化，再跑一次上面val.py並把confusion_matrix.plot(save_dir=save_dir, normalize=True, names=list(names.values()))
+的normalize改成True，可得到正規劃的confusion matrix
+   
+
+＃val.py第299行normalize選True是一般的confusion matrix;選Falsse是用來之後用.csv算準確率
+＃utils/metrics 裡面的 ConfusionMatrix
+
+python train.py --data /home/iris/datasets/roboflow/data.yaml --weights yolov5s.pt --epochs 1000 --batch-size 10 --img 1024 --device 0 --exist-ok
+
+

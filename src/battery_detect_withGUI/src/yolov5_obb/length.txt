@@ -1,0 +1,12 @@
+		ratio		length
+PbAcid		1.43		164.4
+ZnMn		2.43		92.58
+NIMH		2.93		104.86
+NICD		1.99		126.08
+LiOnce		1.77		120.56
+LCO		1.31		206.66
+Capacitor	1.82		154.43
+Alkaline	2.1		117.53
+cy_LI		3.10		102.17
+rec_LF		2.07		345.2
+rec_2L		1.69		189.79
