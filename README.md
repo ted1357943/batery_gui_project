@@ -81,3 +81,17 @@ rosrun tm_driver 169.254.213.199
 停止程式，手臂回到HOME位置，並於畫面右上方顯示各類電池統計數據。
 #### 6. 緊急停止：
 停止程式，手臂停在當前位置。
+---
+## 若有使用QT designer設計介面相關功能，則須執行下面三點確保main.py同時更新
+#### 1.
+```bash
+./src/battery_detect_withGUI/src/Resource/createResource.sh
+```
+#### 2.
+```bash
+./src/battery_detect_withGUI/src/View/createUIPY.sh
+```
+#### 3.
+把Resource/resource_for_mirdc_rc.py移到View，取代View原本的resource_for_mirdc_rc.py
+
+---
